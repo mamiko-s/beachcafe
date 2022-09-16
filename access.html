@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>THE BEACHCAFE</title>
+
+    <!--CSS-->
+    <link href="css/reset.css" type="text/css" rel="stylesheet">
+    <link href="css/common.css" type="text/css" rel="stylesheet">
+    <link href="css/jquery.bxslider.css" rel="stylesheet">
+    <link href="css/slick.css" rel="stylesheet">
+    <link href="css/animate.css" type="text/css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Caveat:700|Meera+Inimai|Signika+Negative&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Solway&display=swap" rel="stylesheet">
+
+    <!--JQUERY-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="js/smoothScroll.js"></script>
+    <!--HUMBERGER-->
+    <script type="text/javascript" src="js/common.js"></script>
+
+
+    <!--SLICK-->
+    <script src="js/slick.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('.slick-box').slick({
+                centerMode: true, //センターモード
+                /*centerPadding: '50px',*/
+                autoplaySpeed: 0,
+                cssEase: 'linear',
+                speed: 8000,
+                arrows: false,
+                autoplay: true, //オートプレイ
+                slidesToShow: 3,
+                responsive: [{
+                        breakpoint: 600,
+                        settings: {
+                            arrows: false,
+                            /*centerMode: true,
+                            centerPadding: '35px',*/
+                            slidesToShow: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 350,
+                        settings: {
+                            arrows: false,
+                            slidesToShow: 1,
+                        }
+                    }
+                ]
+            });
+        });
+
+    </script>
+
+    <!--INVIEW-->
+    <script  type="text/javascript" src="js/jquery.inview.min.js"></script>
+    <script>
+        $(function() {
+            $('.effect').css('opacity', 0);
+            $('.effect').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
+                if (isInView) {
+                    $(this).stop().animate({opacity: 1}, 1200);
+                }
+                else {
+                    $(this).stop().animate({opacity: 0}, 500);
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body id="access_page">
+    <!--枠-->
+    <div id="wrapper">
+        <!--ヘッダー-->
+        <header class="l-header clearfix">
+            <div class="l-header__inner">
+                <div class="l-header__inner__logo">
+                    <h1>THE BEACHCAFE</h1>
+                </div>
+                <div id="navControl">
+                    <a class="close" href="#">Nanigation</a>
+                </div>
+                <nav class="l-header__nav">
+                    <ul class="l-gnav">
+                        <li class="l-gnav__list"><a href="index.html">HOME</a></li>
+                        <li class="l-gnav__list"><a href="menu.html">MENU</a></li>
+                        <li class="l-gnav__list"><a href="access.html">ACCESS</a></li>
+                        <li class="l-gnav__list"><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!--メインビジュアル-->
+            <main_visual>
+                <div class="access_top">
+					<div class="main_top"><img src="images/access_menu.jpg" alt="access"></div>
+                    <div class="logo"><a href="index.html"><img src="images/logo.svg" width="320"></a>
+                    </div>
+                </div>
+            </main_visual>
+            <!--メインコンテンツ-->
+            <div class="access_list">
+                <h2 class="effect animated">ACCESS</h2>
+                <div id="cafeinfo">
+                    <h3 class="effect animated"><i class="far fa-calendar-alt"></i>　CAFE HOURS</h3>
+                    <div class="cafetime">
+                    <ul>
+                        <li>〒253-0055</li>
+                        <li>神奈川県茅ヶ崎市中海岸4丁目
+                            <br>12986-5　湘南ビーチ</li>
+                        <hr>
+                        <li>TEL：0123-45-7890</li>
+                        <li>EMAIL：beachcafe@com.jp</li>
+                        <li>OPEN： 11:00～20:00</li>
+                        <li>CLOSED： 第1,3月曜日・火曜日</li>
+                    </ul>
+                    <img src="images/access_img.jpg">
+                    </div>
+                    <h3 class="effect animated"><i class="fas fa-map-marker-alt"></i>　MAP　</h3>
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3255.5371535124127!2d139.3965569499886!3d35.31748048018389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60184d7d86e374b9%3A0x46b071bacae57a15!2z44K144K244Oz44OT44O844OB44Gh44GM44GV44GN5rW35rC05rW05aC0!5e0!3m2!1sja!2sjp!4v1574904793496!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                   <p>　🔻 駐車場あり</p>
+
+                </div>
+            </div>
+            <!--スライダー-->
+            <div class="slick-box">
+                <img src="images/slider01.jpg">
+                <img src="images/slider02.jpg">
+                <img src="images/slider03.jpg">
+                <img src="images/slider04.jpg">
+                <img src="images/slider05.jpg">
+                <img src="images/slider07.jpg">
+            </div>
+
+        </main>
+    </div>
+</body>
+
+<!--フッター-->
+<footer>
+    <div id="logo">
+        <a href="index.html"><img src="images/logo_footer.svg" width="200px"></a>
+    </div>
+
+    <address>
+        〒253-0055<br>
+        神奈川県茅ヶ崎市中海岸4丁目<br>
+        12986-5　湘南ビーチ
+    </address>
+    <div id="sns">
+        <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+        <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+        <a href="#"><i class="fab fa-twitter-square fa-2x"></i></a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="access.html">ACCESS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+    <p><small>&copy;The Beach Cafe Restaurant Inc. ALL rights reserved.</small></p>
+</footer>
+
+</html>

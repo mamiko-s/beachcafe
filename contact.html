@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>THE BEACHCAFE</title>
+
+    <!--CSS-->
+    <link href="css/reset.css" type="text/css" rel="stylesheet">
+    <link href="css/common.css" type="text/css" rel="stylesheet">
+    <link href="css/jquery.bxslider.css" rel="stylesheet">
+    <link href="css/slick.css" rel="stylesheet">
+    <link href="css/animate.css" type="text/css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Caveat:700|Meera+Inimai|Signika+Negative&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Solway&display=swap" rel="stylesheet">
+
+    <!--JQUERY-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="js/smoothScroll.js"></script>
+    <!--HUMBERGER-->
+    <script type="text/javascript" src="js/common.js"></script>
+
+
+    <!--SLICK-->
+    <script src="js/slick.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('.slick-box').slick({
+                centerMode: true, //センターモード
+                /*centerPadding: '50px',*/
+                autoplaySpeed: 0,
+                cssEase: 'linear',
+                speed: 8000,
+                arrows: false,
+                autoplay: true, //オートプレイ
+                slidesToShow: 3,
+                responsive: [{
+                        breakpoint: 600,
+                        settings: {
+                            arrows: false,
+                            /*centerMode: true,
+                            centerPadding: '35px',*/
+                            slidesToShow: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 350,
+                        settings: {
+                            arrows: false,
+                            slidesToShow: 1,
+                        }
+                    }
+                ]
+            });
+        });
+
+    </script>
+
+    <!--INVIEW-->
+    <script  type="text/javascript" src="js/jquery.inview.min.js"></script>
+    <script>
+        $(function() {
+            $('.effect').css('opacity', 0);
+            $('.effect').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
+                if (isInView) {
+                    $(this).stop().animate({opacity: 1}, 1200);
+                }
+                else {
+                    $(this).stop().animate({opacity: 0}, 500);
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body id="contact_page">
+    <!--枠-->
+    <div id="wrapper">
+        <!--ヘッダー-->
+        <header class="l-header clearfix">
+            <div class="l-header__inner">
+                <div class="l-header__inner__logo">
+                    <h1>THE BEACHCAFE</h1>
+                </div>
+                <div id="navControl">
+                    <a class="close" href="#">Nanigation</a>
+                </div>
+                <nav class="l-header__nav">
+                    <ul class="l-gnav">
+                        <li class="l-gnav__list"><a href="index.html">HOME</a></li>
+                        <li class="l-gnav__list"><a href="menu.html">MENU</a></li>
+                        <li class="l-gnav__list"><a href="access.html">ACCESS</a></li>
+                        <li class="l-gnav__list"><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!--メインビジュアル-->
+            <div id="main_visual">
+                <div class="contact_top">
+					<div class="main_top"><img src="images/contact_main.jpg" alt="contact"></div>
+                    <div class="logo"><a href="index.html"><img src="images/logo.svg" width="320"></a>
+                    </div>
+                </div>
+            </div>
+            <!--メインコンテンツ-->
+            <div class="contact_list">
+                <h2 class="effect animted">CONTACT</h2>
+
+                    <form action="#">
+                        <div>
+                            <label for="name">FIRST NAME*</label><input type="text" id="name" name="your-name" placeholder="TARO">
+                        </div>
+                        <div>
+                            <label for="furigana">LAST NAME*</label><input type="text" id="furigana" name="furigana" placeholder="SHONAN">
+                        </div>
+                        <div>
+                            <label for="number">MOBILE*</label><input type="text" id="number" name="number" placeholder="012-3456-789">
+                        </div>
+                        <div>
+                            <label for="email">EMAIL*</label><input type="email" id="email" name="email" placeholder="beachcafe@web.com">
+                        </div>
+                        <div id="message">
+                            <label for="message">MESSAGE*</label><textarea id="message" name="message"></textarea>
+                        </div>
+                        <p><input type="submit" value="SUBMIT" id="submit"></p>
+                    </form>
+
+            </div>
+            <!--スライダー-->
+            <div class="slick-box">
+                <img src="images/slider01.jpg">
+                <img src="images/slider02.jpg">
+                <img src="images/slider03.jpg">
+                <img src="images/slider04.jpg">
+                <img src="images/slider05.jpg">
+                <img src="images/slider07.jpg">
+            </div>
+
+        </main>
+    </div>
+</body>
+
+<!--フッター-->
+<footer>
+    <div id="logo">
+        <a href="index.html"><img src="images/logo_footer.svg" width="200px"></a>
+    </div>
+
+    <address>
+        〒253-0055<br>
+        神奈川県茅ヶ崎市中海岸4丁目<br>
+        12986-5　湘南ビーチ
+    </address>
+    <div id="sns">
+        <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+        <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+        <a href="#"><i class="fab fa-twitter-square fa-2x"></i></a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="access.html">ACCESS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+    <p><small>&copy;The Beach Cafe Restaurant Inc. ALL rights reserved.</small></p>
+</footer>
+
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>THE BEACHCAFE</title>
+
+    <!--CSS-->
+    <link href="css/reset.css" type="text/css" rel="stylesheet">
+    <link href="css/common.css" type="text/css" rel="stylesheet">
+    <link href="css/jquery.bxslider.css" rel="stylesheet">
+    <link href="css/slick.css" rel="stylesheet">
+    <link href="css/animate.css" type="text/css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat:700|Meera+Inimai|Signika+Negative&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Solway&display=swap" rel="stylesheet">
+
+    <!--JQUERY-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="js/smoothScroll.js"></script>
+
+    <!--HUMBERGER-->
+    <script type="text/javascript" src="js/common.js"></script>
+
+    <!--BGSWITCHER-->
+    <script src="js/jquery.bgswitcher.js"></script>
+    <script>
+        jQuery(function ($) {
+            $('.bg-slider').bgSwitcher({
+                images: ['images/HOME_mv.jpg', 'images/HOME_mv02.jpg', 'images/HOME_mv03.jpg'],
+                interval: 3000,
+                loop: true,
+                shuffle: true,
+                effect: "fade",
+                duration: 1500,
+                easing: "linear"
+            });
+        });
+    </script>
+
+    <!--BXSLIDER-->
+    <script src="js/jquery.bxslider.min.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('.bxslider').bxSlider({
+                speed: 1000,
+                /*
+                slideWidth: 430,*/
+                loop: true,
+                controls: true,
+                pause: 3500,
+                auto: true
+            });
+        });
+    </script>
+
+    <!--SLICK-->
+    <script src="js/slick.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.slick-box').slick({
+                centerMode: true, //センターモード
+                /*centerPadding: '50px',*/
+                autoplaySpeed: 0,
+                cssEase: 'linear',
+                speed: 8000,
+                arrows: false,
+                autoplay: true, //オートプレイ
+                slidesToShow: 3,
+                responsive: [{
+                    breakpoint: 600,
+                    settings: {
+                        arrows: false,
+                        /*centerMode: true,
+                        centerPadding: '35px',*/
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 350,
+                    settings: {
+                        arrows: false,
+                        slidesToShow: 1,
+                    }
+                }]
+            });
+        });
+    </script>
+
+    <!--TOP PAGE-->
+    <script>
+        $(function () {
+            var pagetop = $('#page_top');
+            // ボタン非表示
+            pagetop.hide();
+
+            // 100px スクロールしたらボタン表示
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    pagetop.fadeIn();
+                } else {
+                    pagetop.fadeOut();
+                }
+            });
+            pagetop.click(function () {
+                $('body, html').animate({ scrollTop: 0 }, 500);
+                return false;
+            });
+        });
+    </script>
+
+    <!--INVIEW-->
+    <script type="text/javascript" src="js/jquery.inview.min.js"></script>
+    <script>
+        $(function () {
+            $('.effect').css('opacity', 0);
+            $('.effect').on('inview', function (event, isInView, visiblePartX, visiblePartY) {
+                if (isInView) {
+                    $(this).stop().animate({ opacity: 1 }, 1000);
+                }
+                else {
+                    $(this).stop().animate({ opacity: 0 }, 800);
+                }
+            });
+        });
+
+        $(function () {
+            $('.slidein').on('inview', function (event, isInView) {
+                if (isInView) {
+                    //表示領域に入った時
+                    $(this).addClass('fadeInLeft slow');
+                }
+            });
+            $('.heartbeat').on('inview', function (event, isInView) {
+                if (isInView) {
+                    //表示領域に入った時
+                    $(this).addClass('heartBeat slow');
+                } else {
+                    //表示領域から出た時
+                    $(this).removeClass('heartBeat slow');
+                    $(this).css('opacity', 1); //非表示にしておく
+                }
+            });
+            $('.box1').on('inview', function (event, isInView) {
+                if (isInView) {
+                    //表示領域に入った時
+                    $(this).addClass('fadeInRight slow');
+                } else {
+                    //表示領域から出た時
+                    $(this).removeClass('fadeInRight');
+                    $(this).css('opacity', 0); //非表示にしておく
+                }
+            });
+        });
+
+    </script>
+
+
+</head>
+
+
+<body id="index_page">
+    <!--枠-->
+    <div id="wrapper">
+        <!--ヘッダー-->
+        <header class="l-header clearfix">
+            <div class="l-header__inner">
+                <div class="l-header__inner__logo">
+                    <h1><a href="index.html">THE BEACHCAFE</a></h1>
+                </div>
+                <div id="navControl">
+                    <a class="close" href="#">Nanigation</a>
+                </div>
+                <nav class="l-header__nav">
+                    <ul class="l-gnav">
+                        <li class="l-gnav__list"><a href="index.html">HOME</a></li>
+                        <li class="l-gnav__list"><a href="menu.html">MENU</a></li>
+                        <li class="l-gnav__list"><a href="access.html">ACCESS</a></li>
+                        <li class="l-gnav__list"><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!--メインビジュアル-->
+            <div id="main_visual">
+                <div class="bg-slider"><a href="index.html"><img src="images/logo.svg" width="320" alt="logo"></a></div>
+            </div>
+
+            <!--メインコンテンツ-->
+            <div id="main_contents">
+                <div class="effect animated">
+                    <div id="title">
+                        <h2>WELCOME</h2>
+                        <span>The Beach Cafe Reataurant</span>
+                    </div>
+                </div>
+                <section class="container">
+                    <div class="effect animated">
+                        <h3 class="section_title">BEACHFRONT DINING</h3>
+                    </div>
+                    <div class="position">
+                        <img src="images/beachfront.jpg" alt="beachfront dining">
+
+                        <div id="subtitle">
+                            <p class="effect animated">"海を感じるビーチカフェレストラン"</p>
+                        </div>
+
+                        <div id="subtext">
+                            <p class="effect animated">ビーチが目の前の、自由で開放的な雰囲気のなかで<br>日常から解放されるひとときを。<br>The Beachcafe
+                                located on Shonan beach and offers<br>an amazing dining experience with cozy atmosphere.
+                            </p>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <div class="hidden_box">
+                    <label for="label1">LEARN MORE</label>
+                    <input type="checkbox" id="label1" />
+                    <div class="hidden_show">
+                        <!--非表示ここから-->
+                        <section class="container2">
+                            <div class="image_area">
+                                <div><img src="images/pizza.jpg" alt="pizza"></div>
+                                <div><img src="images/cheers.jpg" alt="cheers"></div>
+                            </div>
+                            <div id="text_content">
+                                <p class="textbox">湘南ビーチハウス</p>
+                                <div id="subtext2">
+                                    <p>THE BEACHCAFEは、海辺にあるカリフォルニアスタイルのカフェです。海と共にある特別な時間をみなさまのライフスタイルのひとつに。</p><br>
+                                    <p>どんな世代の方にも楽しんでいただける居心地のよい解放感あふれる空間を提供しております。</p><br>
+                                    <p>A CASUAL DINING
+                                        EXPERIENCE FOR ALL TO ENJOY!</p>
+                                </div>
+                            </div>
+                        </section>
+                        <!--ここまで-->
+                    </div>
+                </div>
+
+                <section class="container3">
+                    <div class="title3">
+                        <h3 class="section_title effect animated">DOG FRIENDLY <i class="fas fa-dog"></i></h3>
+                        <div id="subtext3">
+                            <p>THE BEACHCAFEでは、愛犬とご一緒に気軽にお食事を楽しむことができます。落ち着いた店内で、ゆったりとくつろぎの時間を過ごして頂けるようお迎え致します。</p><br>
+                            <p><i class="fas fa-paw"></i> 小型犬から大型犬のワンちゃんも連れて飲食が可能です。</p>
+                        </div>
+                    </div>
+                    <!-- スライトさせるコンテンツ -->
+                    <div class="bxslider">
+                        <div><img src="images/dog01.jpg" alt="doggy" width="300"></div>
+                        <div><img src="images/dog02.jpg" alt="doggy" width="300"></div>
+                        <div><img src="images/dog06.jpg" alt="doggy" width="300"></div>
+                        <div><img src="images/dog04.jpg" alt="doggy" width="300"></div>
+                    </div>
+                </section>
+
+                <section class="container4">
+                    <div>
+                        <h3 class="section_title effect">SUNSET DINNER <i class="fas fa-cocktail"></i></h3>
+                    </div>
+                    <div class="flex">
+                        <p id="burger_bg"><img src="images/burger.jpg" alt="burger"></p>
+                        <div>
+                            <p class="right"><img src="images/chef.jpg" alt="chef"></p>
+                            <p class="right"><img src="images/beer.jpg" alt="beer"></p>
+                        </div>
+                    </div>
+                    <div id="subtext4">
+                        <p class="box1 animated">こだわりのローカルフードを使用したお料理とともに、サンセットをお楽しみいただけます。</p>
+                        <p class="box1 animated">Take in the spectecular views while enjoying lunch or watch the sunset
+                            go down dinner!</p>
+                    </div>
+                </section>
+
+                <p class="more"><a href="menu.html">SEE OUR MENU</a></p>
+
+            </div>
+
+            <!--ASIDE-->
+            <aside>
+                <h3 class="heartbeat animated">DISCOVR MORE<br><i class="fas fa-bicycle"></i></h3>
+                <p>周辺では様々なアクティビティが楽しめます。</p>
+                <div id="activity">
+                    <div class="slidein animated"><img src="images/firewokss.jpg" width="300" height="300"
+                            alt="fireworks">
+                        <p>FIREWORKS </p>
+                    </div>
+                    <div class="slidein animated"><img src="images/supp.jpg" width="300" height="300" alt="sup">
+                        <p>SUP </p>
+                    </div>
+                    <div class="slidein animated"><img src="images/yogaa.jpg" width="230" height="230" alt="yoga">
+                        <p>YOGA </p>
+                    </div>
+                    <div class="slidein animated"><img src="images/bikes.jpg" width="230" height="230" alt="bikes">
+                        <p>RENTAL BIKES </p>
+                    </div>
+                </div>
+            </aside>
+
+            <!--インフォメーション-->
+            <section class="information">
+                <h3 class="heartbeat animated">WHAT'S NEW<br><i class="far fa-newspaper"></i></h3>
+                <div id="news">
+                    <ul>
+                        <li><time>2022/7/15</time>
+                            <span>▶ Uber Eatsでのデリバリーはじめました！</span>
+                        </li>
+                        <li><time>2022/12/9</time>
+                            <span>▶ 年末年始の営業についてお知らせ</span>
+                        </li>
+                        <li><time>2021/8/23</time>
+                            <span>▶ 今月の季節限定新メニュー</span>
+                        </li>
+                        <li><time>2020/5/20 </time>
+                            <span>▶ 台風12号による休業のお知らせ</span>
+                        </li>
+                        <li><time>2020/4/23</time>
+                            <span>▶ 今月の季節限定新メニュー</span>
+                        </li>
+                        <li><time>2019/6/23</time>
+                            <span>▶ 花火大会による営業時間変更のお知らせ</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!--スライダー-->
+            <div class="slick-box">
+                <img src="images/slider01.jpg">
+                <img src="images/slider02.jpg">
+                <img src="images/slider03.jpg">
+                <img src="images/slider04.jpg">
+                <img src="images/slider05.jpg">
+                <img src="images/slider07.jpg">
+            </div>
+        </main>
+    </div>
+</body>
+<div id="page_top"><a href="#wrapper"><i class="fas fa-angle-double-up"></i></a></div>
+
+<!--フッター-->
+<footer>
+    <div id="logo">
+        <a href="index.html"><img src="images/logo_footer.svg" width="200px"></a>
+    </div>
+
+    <address>
+        〒253-0055<br>
+        神奈川県茅ヶ崎市中海岸4丁目<br>
+        12986-5　湘南ビーチ
+    </address>
+    <div id="sns">
+        <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+        <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+        <a href="#"><i class="fab fa-twitter-square fa-2x"></i></a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="access.html">ACCESS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+    <p><small>&copy;The Beach Cafe Restaurant Inc. ALL rights reserved.</small></p>
+</footer>
+
+
+</html>
