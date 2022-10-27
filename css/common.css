@@ -32,6 +32,53 @@ p {
     font-size: 3vw;
 }
 
+.col1 {
+    width: 5.9829%;
+}
+
+.col2 {
+    width: 14.5299145%;
+}
+
+.col3 {
+    width: 23.0769231%;
+}
+
+.col4 {
+    width: 31.6239316%;
+}
+
+.col5 {
+    width: 40.1709402%;
+}
+
+.col6 {
+    width: 48.7179487%;
+}
+
+.col7 {
+    width: 57.2649573%;
+}
+
+.col8 {
+    width: 65.8119658%;
+}
+
+.col9 {
+    width: 74.3589744%;
+}
+
+.col10 {
+    width: 82.9059829%;
+}
+
+.col11 {
+    width: 91.4529915%;
+}
+
+.col12 {
+    width: 100%;
+}
 
 /*-------------
     全体の枠
@@ -45,7 +92,7 @@ body {
 #menu_page,
 #contact_page,
 #access_page {
-    background: #F1F1E6;
+    background: #F4EBE6;
     color: #25435f;
 }
 
@@ -127,7 +174,8 @@ h1 a {
 }
 
 .l-gnav li a:hover {
-    background-color: #d3dfed;
+    background-color: #cddaeb;
+    color: black;
     transition: background-color 1s;
 }
 
@@ -375,7 +423,7 @@ h1 a {
 
 /*  CONTAINER3  */
 .container3 {
-    background: #c2e1dd;
+    background: #E3DAD5;
     margin-top: 3rem;
 }
 
@@ -611,9 +659,9 @@ form textarea {
 
 form #submit {
     text-align: center;
-    width: 28vw;
-    height: 8vh;
-    font-size: 1.5rem;
+    width: 20vw;
+    height: 6vh;
+    font-size: 1.2rem;
     background: #25435f;
     color: #fff;
 }
@@ -634,7 +682,7 @@ form p {
 --------------*/
 aside {
     width: 100%;
-    background: #c2e1dd;
+    background: #E3DAD5;
     padding: 60px 0;
 }
 
@@ -670,7 +718,7 @@ aside img {
 NEWS
 --------------*/
 .information {
-    background: #F1F1E6;
+    background: #F4EBE6;
     text-align: center;
     padding: 20px;
 }
@@ -692,7 +740,7 @@ NEWS
 #news li {
     display: flex;
     flex-direction: column;
-    border-bottom: 1.5px dashed #25435f;
+    border-bottom: 1px dashed #25435f;
     padding: 12px 0 5px;
     text-align: left;
 }
@@ -732,7 +780,7 @@ span {
 footer {
     width: 100%;
     height: auto;
-    background: #d3dfed;
+    background: #dae5f3;
     opacity: 1;
     box-shadow: 0 1px 5px rgba(41, 42, 43, 0.5);
     color: #25435f;
@@ -1294,11 +1342,11 @@ footer p {
     }
 
     #burger_bg img {
-        max-width: width: 90%;
+        max-width: 90%;
     }
 
     .right img {
-        max-width: width: 100%;
+        max-width: 100%;
     }
 
     #subtext4 p {
